@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "express": "^4.18.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "tushop",
+  "version": "1.0.0",
+  "main": "categories.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HoangTung17/TuShop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HoangTung17/TuShop/issues"
+  },
+  "homepage": "https://github.com/HoangTung17/TuShop#readme",
+  "description": ""
+}
