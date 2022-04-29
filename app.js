@@ -12,6 +12,12 @@ app.post('/edit',async (req,res)=>{
     const price = req.body.txtPrice
     const picURL = req.body.txtPic
     
+    // if(name.length > 5){
+    //     const errorMsg = "Ten qua dai!"
+    //     res.render('home',{'errorMsg': errorMsg})
+    //     return;
+    // }
+
     //await Product.updateOne({'_id':id},{$set: {'name':name,'price':price,'picURL':picURL}})
     var prod = await Product.findById(id)
     prod.name=name
@@ -71,6 +77,26 @@ app.post('/newProduct',async (req,res)=>{
     const price  = req.body.txtPrice
     const picURL  = req.body.txtPic
     
+    // let error = new Object()
+    // let flag = true
+    // if(name.trim().length ==0){
+    //     error["name"] = "Ten khong de trang!"
+    //     flag =false
+    // }
+    // if(pic.trim().length < 10){
+    //     error["pic"] = "Duong dan anh khong hop le"
+    //     flag =false
+    // }
+    
+    // if(flag==true){ // khong co loi
+    //      let product = new Product({'name':name,'picURL': pic})
+    //     await product.save()
+    //     console.log("New product was saved!" + product._id)
+    //      res.redirect('/')
+    // }else{
+    //     res.render('home',{'error':error})
+    // }
+
     const productEntity = new Product({'name':name,'price':price,'picURL':picURL})
     await productEntity.save()
     res.redirect('/')
