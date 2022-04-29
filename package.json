@@ -1,24 +1,25 @@
 {
-  "dependencies": {
-    "express": "^4.18.0"
-  },
-  "scripts": {
-    "start": "node server.js"
-  },
   "name": "tushop",
   "version": "1.0.0",
-  "main": "categories.js",
-  "devDependencies": {},
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HoangTung17/TuShop.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/HoangTung17/TuShop/issues"
   },
   "homepage": "https://github.com/HoangTung17/TuShop#readme",
-  "description": ""
+  "dependencies": {
+    "express": "^4.18.0",
+    "hbs": "^4.2.0",
+    "mongoose": "^6.3.1"
+  }
 }
