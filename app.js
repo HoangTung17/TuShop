@@ -11,6 +11,7 @@ app.post('/edit',async (req,res)=>{
     const name = req.body.txtName
     const price = req.body.txtPrice
     const picURL = req.body.txtPic
+    const weight = req.body.txtWeight
     
     // if(name.length > 5){
     //     const errorMsg = "Ten qua dai!"
@@ -23,6 +24,7 @@ app.post('/edit',async (req,res)=>{
     prod.name=name
     prod.price = price
     prod.picURL = picURL
+    prod.weight = weight
     prod.save((err)=>{
          if(!err)
             console.log("Ok")
@@ -62,7 +64,6 @@ app.get('/viewAll', async (req,res)=>{
         const query = await  Product.find().limit(5)
         res.render('allProduct',{'products':query})
     }else if(page==2){
-        //bo qua 5 ban ghi dau tien, lay 5 ban ghi tiep theo
         const query = await  Product.find().skip(5).limit(5)
         res.render('allProduct',{'products':query})
     }else{
@@ -76,6 +77,7 @@ app.post('/newProduct',async (req,res)=>{
     const name = req.body.txtName
     const price  = req.body.txtPrice
     const picURL  = req.body.txtPic
+    const weight = req.body.txtWeight
     
     // let error = new Object()
     // let flag = true
@@ -97,7 +99,7 @@ app.post('/newProduct',async (req,res)=>{
     //     res.render('home',{'error':error})
     // }
 
-    const productEntity = new Product({'name':name,'price':price,'picURL':picURL})
+    const productEntity = new Product({'name':name,'price':price,'picURL':picURL, 'weight': weight})
     await productEntity.save()
     res.redirect('/')
 

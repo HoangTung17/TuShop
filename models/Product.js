@@ -12,7 +12,8 @@ var db = mongoose.connection;
 const ProductSchema = new Schema({
     name : {type:String, required:true},
     price: {type:Number},
-    picURL: {type:String}
+    picURL: {type:String},
+    weight: {type:Number}
 
 })
 
